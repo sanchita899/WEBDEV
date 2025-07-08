@@ -1,0 +1,11 @@
+data tyoes
+-string
+-number
+-boolean
+-undefined
+-null
+
+
+repeat some event-
+setInterval+clearInterval
+setTimeout+clearTimeout
