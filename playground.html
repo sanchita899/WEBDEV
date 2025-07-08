@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playground</title>
+
+    <style>
+        body{
+            font-family: 'Segoe UI', sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: black;
+            min-height: 100vh;
+        }
+
+        .container-box {
+            background: linear-gradient(135deg, #667eea 0%, #63eabb 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            backdrop-filter: blur(10px);
+        }
+
+        button {
+            background: #b81c1c;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+            transition: transform 0.2s ease;
+            font-weight: bold;
+            font-size: 1.4em;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <h3>Javascript Playground</h3>
+    <div id="container" class="container-box">
+        <p>output will appear here!</p>
+    </div>
+
+    <div id="countdown" class="container-box">
+        <p>output will appear here!</p>
+    </div>
+    <div id="countdown-value"></div>
+
+
+
+    <script src="playground.js"></script>
+</body>
+
+</html>
