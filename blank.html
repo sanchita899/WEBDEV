@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation Master Class</title>
+
+    <style>
+        body{
+            background-color:#3b58da ;
+            color:white;
+            font-family:'Segoe UI', sans-serif;
+            margin:0 auto;
+            padding:20px;
+            max-width: 1200px;
+            min-height: 100vh;
+        }
+
+        .box{
+            background: rgba(255,255,255,.1);
+            padding:30px;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #092abe;
+            backdrop-filter: blur(10px);
+        }
+
+        .display{
+            background-color:  rgba(255,255,255,0.2);
+            border:1px dashed white;
+            border-radius: 10px;
+            padding:25px;
+            margin:2px 10px 20px 10px;
+            transition: all 0.3s ease ;
+
+        }
+
+        .display:hover {
+            border-color: rgba(255,255,255,0.7);
+            background: rgba(255,255,255,0.3);
+        }
+
+        button{
+            color:white;
+            background:linear-gradient(45deg, #ff6b6b, #ee5a52);
+            border:none;
+            border-radius: 20px;
+            padding:10px;
+            font-size: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255,107,107,0.3);
+            cursor:pointer;
+         }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255,107,107,0.4);
+        }
+
+        input,select{
+            border-radius: 10px;
+            padding:10px;
+            border: none;
+            margin: 5px;
+            font-size: 14px;
+            min-width: 200px;
+
+        }
+
+
+        .new-element{
+            background-color: cornflowerblue;
+            margin:8px;
+            padding: 15px;
+            border-radius:10px ;
+        }
+    </style>
+</head>
+<body>
+    <div>
+    <h1>DOM Manipulation Master Class</h1>
+    <p>Today we control the entire webpage with JavaScript!</p>
+    </div>
+
+    <div id="text" class="box">
+        <h2>Lab 1:Dynamic Element Creation</h2>
+        <div id="element" class=display>
+            <p>Elements will be created here dynamically!</p>
+        </div>
+
+        <div id="form">
+            <select id="options">
+                <option value="div">Div Element</option>
+                <option value="p">Paragraph</option>
+                <option value="h1">Heading</option>
+                <option value="button">Button</option>
+                <option value="img">Image</option>
+            </select>
+            
+        </div>
+        <input type="text" id="text-input" placeholder="Element content">
+        <button onclick="createCustomElement()">Create Element</button>
+        <button onclick="clearPlayground()">Clear All</button>
+    </div>
+
+    <div id="element2" class="box">
+        <h2>Lab 2: List Manipulation Master</h2>
+
+        <div id="element" class=display>
+            <h3>Indian States List</h3>
+            <ul id="states-list">
+                <li>Maharashtra</li>
+                <li>Karnataka</li>
+                <li>Tamil Nadu</li>
+                <li>Delhi</li>
+            </ul>
+        </div>
+        <input type="text" placeholder="Enter state name">
+        <button>Add State</button>
+        <button onclick="removeLastState()">Remove Last</button>
+        <button on>Sort A-Z</button>
+        <button>Highlight all</button>
+
+    </div>
+
+    <script>
+        function createCustomElement(){
+            
+            let elementType=document.getElementById("options").value;
+            let content=document.getElementById("text-input").value
+            document.getElementById("text-input").value="";
+            //alert(elementType);
+            let newElement=document.createElement(elementType)
+
+            switch(elementType){
+                case 'img':
+                newElement.src="https://www.snexplores.org/wp-content/uploads/2020/04/1030_LL_trees.png"
+                newElement.alt=content;
+                newElement.style.width="100px";
+                newElement.style.height="100px"
+                default:
+                newElement.textContent=content;
+            }
+
+            
+            let playground=document.getElementById("element");
+            playground.appendChild(newElement);
+        }
+
+        function clearPlayground(){
+            let playground=document.getElementById("element");
+            playground.innerHTML="<p>Elements will be created here dynamically!</p>";
+        }
+
+
+        function removeLastState(){
+
+            let state=document.getElementById("states-list");
+            let last=state.lastElementChild;
+            if(last){
+                last.style.background="pink";
+                setTimeout(function(){last.remove()},1000);
+            }else{
+                alert("no state found")
+            }
+            
+        }
+
+        function sortStates(){
+
+            let stateList=document.getElementById("states-list")
+            let
+        }
+    </script>
+
+        
+
+        
+</body>
+</html>
